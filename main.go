@@ -18,7 +18,7 @@ func main() {
 	// .envの読み取り
 	err := godotenv.Load(".env")
 	if err != nil {
-		// .env読めなかった場合の処理
+		log.Fatalf("not found .env file: %v\n", err)
 	}
 
 	apiKey := os.Getenv("APIKEY")
